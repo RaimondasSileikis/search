@@ -115,9 +115,7 @@ body {
                 width: 100%;
                 background-color: var(--color-red-light);
             }
-            .data-item2{
-                display: none;
-            }
+           
             .detail-item{
                 position: absolute;
                 top: 200px;
@@ -154,9 +152,7 @@ body {
                 }
             
             }
-            .detail-item2{
-                display: none;
-            }
+           
         }
         .search-results::-webkit-scrollbar{
             display: none;
