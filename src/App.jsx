@@ -1,30 +1,38 @@
 
 import './App.css';
-import Search from './Components/Search';
+import SearchBar from './Components/SearchBar';
 
-// import { SearchBar } from 'react-native-elements'
-import { useEffect, useState } from 'react';
+import './base.scss';
+
+
+
 
 function App() {
 
-  const [dataAPI, setDataAPI] = useState([]);
-  const [stringValue, setStringValue] = useState('');
-  const [movies, setMovies] = useState([]);
+//   const [dataAPI, setDataAPI] = useState([]);
+//   const [filteredData, setFilteredData] = useState([]);
 
-  const fetchData = async () => {
-    const res = await fetch('https://api.themoviedb.org/3/search/movie?api_key=**{api_raktas}**&language=en-US&query=**{paieškos_tekstas}**');
-    const json = await res.json();
-    setDataAPI(json);
-        setMovies(json.slice());
+  
+
+//   const fetchData = async () => {
+//     const res = await fetch('https://api.themoviedb.org/3/search/movie?api_key=aa5940b71d86c069bf90501b1c3648d5&language=en-US&query=**{movies}**');
+//     const json = await res.json();
+//     setDataAPI(json.results);
+//         setFilteredData(json.results.slice());
         
-}
-useEffect(()=>{
-  fetchData();
-}, []);
-console.log(dataAPI);
+// }
+// useEffect(()=>{
+//   fetchData();
+// }, []);
+// console.log(dataAPI);
+
+
+
+
   return (
     <div className="app">
-      <Search dataAPI={dataAPI} movies={movies} />
+      <SearchBar  />
+     
 
     </div>
   );
