@@ -47,6 +47,7 @@ body {
         .search-inputs{
             display:flex;
             align-items: center;
+            justify-content:space-between;
             width: 100%;
             background-color: var(--color-red-light-light);
             padding: 0.4em 0 0.4em 0.5em;
@@ -58,7 +59,7 @@ body {
                 
             }
             input{
-                width: 90%;
+                width: 100%;
                 background-color: var(--color-red-light-light);
                 border: none;
                 border-radius: 2px;
@@ -66,13 +67,12 @@ body {
                 padding-left: 0.5em;
                 height: 2.5em;
                 color: white;
-
             }
             input:focus {
                 outline:none;
             }
-            .search-icons{
-                width: 5%;
+            .delete-icon{
+                width: 10px;
                 font-size: 0.8em;
                 font-weight: 700;
                 height: 1.8em;
@@ -81,7 +81,6 @@ body {
                 place-items: center;
                  cursor: pointer;
             }
-           
         }
         .search-results{
             display:flex;
@@ -94,8 +93,6 @@ body {
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             overflow: hidden;
             overflow-y: auto;
-           
-
             .data-item{
                 padding: 0.4em 0 0.4em 2em;
                 cursor: pointer;

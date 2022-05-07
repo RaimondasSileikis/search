@@ -1,7 +1,6 @@
-import { ReactComponent as Star } from './star.svg';
+import { ReactComponent as Star } from '../img/star.svg';
 import '../base.scss';
 export default function Move({ API_IMG, dataMove}) {
-
 
     return(
 

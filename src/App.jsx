@@ -1,14 +1,9 @@
-
 import './App.css';
-
-import { ReactComponent as Movie } from './Components/movie.svg';
+import { ReactComponent as Movie } from './img/movie.svg';
 import './base.scss';
 import Move from './Components/Move';
 import SearchBarList from './Components/SearchBarList';
-// import { ReactComponent as Movie } from './Componets/movie.svg';
-
 import { useState } from 'react';
-
 
 function App() {
 
@@ -25,14 +20,11 @@ const [dataMove , setDataMove] = useState([]);
     const data = await res.json();
     setDataAPI(data.results);
     setDataMove([]);
-
-console.log(data.results);
 }
 
 const handleFilter = (event) => {
   const searchWord = event.target.value;
   setSearchWord(searchWord);
-  console.log(searchWord.length);
   searchWord.length > 2 && fetchData(searchWord);
   setDataMove([]);
 };    
@@ -47,16 +39,18 @@ const moveClick = (id) => {
   const newData = dataAPI.filter(move => move.id === id);
   setDataMove([...newData]);
   setDataAPI('');
-  console.log(dataMove); 
+  setSearchWord(newData[0].original_title)
 };
   return (
     <div className="app">
           <div className="main" ></div>
           <div className="search" >
                 <div className="search-inputs">
-                    <Movie className="movie" />
+                  <>
+                     <Movie className="movie" />
                     <input type="text" onChange={handleFilter} value={searchWord} onSubmit={fetchData} />
-                    <div className="search-icons" >
+                  </>
+                    <div className="delete-icon" >
                         {searchWord.length !== 0 ? <div onClick={clearInput} >x</div> : null}
                     </div>
                 </div>

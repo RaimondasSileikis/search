@@ -1,9 +1,6 @@
 
 export default function SearchBarList({dataAPI, moveClick}){
 
-
-  console.log(dataAPI);
-
     return(
         <>
             <div className="search-results" >
